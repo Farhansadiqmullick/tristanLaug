@@ -1,0 +1,1655 @@
+/***********************************
+MEDIA QUERIES
+***********************************/
+@media only screen and (max-width: 1600px) {
+	/***********************************
+	BANNER STYLE
+	***********************************/
+	.page-banner {
+		min-height: 800px;
+	}
+	
+	/***********************************
+	HOME PAGE STYLE
+	***********************************/
+	.films {
+
+		&__card {
+			min-height: 700px;
+		}
+	}
+
+	.designs {
+		padding: 86px 0 100px;
+	}
+
+	.hm-about-us {
+		padding: 100px 0;
+	}
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+		padding: 100px 0 0;
+		margin-bottom: 100px;
+
+		&__content {
+
+			.title {
+				margin-bottom: 20px;
+			}
+
+			.sub-title {
+				margin-bottom: 20px;
+			}
+
+			.meta-wrap {
+				margin-bottom: 50px;
+			}
+
+			.desc {
+				margin-bottom: 100px;
+			}
+		}
+
+		&__embed {
+			height: 700px;
+			margin-bottom: -100px;
+		}
+	}
+
+	.credits {
+		padding: 100px 0;
+
+		.entry-title {
+			margin-bottom: 44px;
+		}
+
+		.credits-popup-fit {
+			margin-right: 40px;
+		}
+	}
+
+	/***********************************
+	SINGLE PAGE STYLES
+	***********************************/
+	.single-page {
+		padding: 100px 0;
+	}
+
+
+}/* 1600 */
+
+@media only screen and (max-width: 1460px) {
+	h1, .h1 {font-size: 62px; line-height: 72px; &.fs-lg, {font-size: 76px; line-height: 90px;} }
+
+	.container {
+		max-width: 1366px;
+	}
+
+	.container, .container-fluid {
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+
+	.btn {
+		font-size: 21px;
+		padding: 24px 24px 22px 32px;
+		@include letter-spacing(150, 21);
+
+		i {
+			margin-left: 17px;
+
+			&.icon-email {
+				font-size: 50px;
+			}
+
+			&:before {
+				vertical-align: -9px;
+			}
+		}
+	}
+
+	/***********************************
+	HEADER STYLE
+	***********************************/
+	.header {
+
+		.navbar {
+			padding: 30px 0 10px;
+
+			.container {
+				padding-right: 40px;
+				padding-left: 40px;
+			}
+
+			.navbar-header {
+
+				.navbar-brand {
+
+					img {
+						max-width: 85px;
+					}
+				}
+			}
+
+			.navbar-collapse {
+
+				.navbar-nav {
+
+					> li {
+						
+						&:not(:last-child) {
+							margin-right: 30px;
+						}
+
+						> a {
+							font-size: 24px;
+							@include letter-spacing(50, 24);
+						}
+					}
+				}
+			}
+		}
+
+		&.stop {
+
+
+			.navbar {
+
+				.navbar-header {
+
+					.navbar-brand {
+
+						img {
+							max-width: 70px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.header-gutter {
+		height: 131px;
+	}
+
+	/***********************************
+	BANNER STYLE
+	***********************************/
+	.banner {
+		padding-top: 131px;
+
+	    &__content {
+
+	    	.title {
+	    		@include letter-spacing(50, 76);
+	    	}
+
+
+	    	ul.list-unstyled {
+
+	    		li {
+	    			font-size: 24px;
+	    			line-height: 32px;
+	    		}
+	    	}
+	    }
+	}
+
+	.page-banner {
+		min-height: 700px;
+	}
+
+	/***********************************
+	HOME PAGE STYLE
+	***********************************/
+	.films {
+		padding: 90px 0 ;
+	}
+
+	.designs {
+		padding: 86px 0 90px;
+
+		.entry-title {
+			margin-bottom: 60px;
+		}
+	}
+
+	.hm-about-us {
+		padding: 90px 0;
+
+		&__content {
+
+			.title {
+				margin-bottom: 30px;
+			}
+
+
+			.des {
+				margin-bottom: 40px;
+
+				p {
+					max-width: 100%;
+					font-size: 30px;
+					line-height: 46px;
+					margin-bottom: 40px;
+					@include letter-spacing(50, 30);
+				}
+			}
+
+			.social-conetct {
+				margin-bottom: 60px;
+
+				.label-title {
+					font-size: 30px;
+					line-height: 46px;
+					@include letter-spacing(50, 30);
+				}
+			}
+		}
+	}
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+		padding: 90px 0 0;
+		margin-bottom: 80px;
+
+		&__content {
+
+			.title {
+				margin-bottom: 20px;
+				@include letter-spacing(50, 52);
+			}
+
+			.sub-title {
+				margin-bottom: 15px;
+			}
+
+			.meta-wrap {
+				margin-bottom: 40px;
+			}
+
+			.desc {
+				margin-bottom: 60px;
+
+				p {
+					font-size: 30px;
+					line-height: 46px;
+					@include letter-spacing(50, 30);
+				}
+			}
+		}
+
+		&__embed {
+			height: 650px;
+			margin-bottom: -80px;
+		}
+	}
+
+	.credits {
+		padding: 90px 0;
+
+		.entry-title {
+			margin-bottom: 40px;
+		}
+
+		.credits-popup-fit {
+			float: left;
+			min-width: 540px;
+			max-width: 540px;
+			margin-right: 40px;
+		}
+
+		&__card-content {
+
+			ul.list-unstyled {
+				margin-bottom: 15px;
+
+				li {
+					font-size: 30px;
+					line-height: 46px;
+
+					&:not( :last-child ) {
+						margin-bottom: 40px;
+					}
+				}
+			}
+
+			.btn-box {
+				margin-top: 60px;
+			}
+
+			.btn-view-credits {
+				min-width: 371px;
+			}
+		}
+	}
+
+	.photo-gallery {
+		padding: 86px 0 90px;
+
+		.entry-title {
+			margin-bottom: 50px;
+			@include letter-spacing(200, 48);
+		}
+	}
+
+	.awards {
+		padding: 90px 0 70px;
+	}
+
+	.press {
+		padding: 70px 0 70px;
+	}
+
+	.partners {
+		padding: 70px 0 90px;
+
+		.entry-title {
+
+			.title {
+				margin-bottom: 60px;
+				@include letter-spacing(200, 48);
+			}
+		}
+	}
+
+	/***********************************
+	SINGLE PAGE STYLES
+	***********************************/
+	.single-page {
+		padding: 90px 0;
+
+		.main-content {
+
+			.entry-title {
+				margin-bottom: 60px;
+			}
+		}
+	}
+
+
+	/***********************************
+	FOOTER STYLE
+	***********************************/
+	.footer {
+		padding: 84px 0 72px;
+	}
+
+}/* 1460 */
+
+@media only screen and (max-width: 1366px) {
+	body { font-size: 24px; line-height: 32px; }
+	h1, .h1 {font-size: 52px; line-height: 62px; &.fs-lg, {font-size: 62px; line-height: 72px;} }
+	h2, .h2 {font-size: 48px;line-height: 60px;}
+	h3, .h3 {font-size: 42px;line-height: 52px;}
+
+	.container {
+		max-width: 1182px;
+	}
+
+	/***********************************
+	BANNER STYLE
+	***********************************/
+	.banner {
+		padding-top: 131px;
+
+	    &__content {
+
+	    	.title {
+	    		@include letter-spacing(50, 62);
+	    	}
+
+
+	    	ul.list-unstyled {
+
+	    		li {
+	    			font-size: 21px;
+	    			line-height: 32px;
+	    			@include letter-spacing(200, 21);
+	    		}
+	    	}
+	    }
+	}
+
+	/***********************************
+	HOME PAGE STYLE
+	***********************************/
+	.films {
+		padding: 80px 0 ;
+
+		&__card {
+			min-height: 600px;
+		}
+	}
+
+	.designs {
+		padding: 80px 0;
+
+		.entry-title {
+			margin-bottom: 40px;
+		}
+	}
+
+	.hm-about-us {
+		padding: 80px 0;
+	}
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.festival-logos {
+		padding:70px 0 60px;
+	}
+
+	.films-empty {
+		padding: 80px 0 0;
+	}
+
+	.credits {
+		padding: 80px 0;
+	}
+
+	.photo-gallery {
+		padding: 86px 0 90px;
+
+		.entry-title {
+			margin-bottom: 50px;
+			@include letter-spacing(200, 48);
+		}
+	}
+
+	.awards, .press {
+
+		&__content {
+
+			.title {
+				margin-bottom: 36px;
+				@include letter-spacing(200, 48);
+			}
+
+			.quick-links {
+
+				a {
+					line-height: 46px;
+				}
+			}
+		}
+	}
+
+	.awards {
+		padding: 80px 0 60px;
+	}
+
+	.press {
+		padding: 60px 0 60px;
+	}
+
+	.partners {
+		padding: 60px 0 90px;
+
+		.entry-title {
+
+			.title {
+				margin-bottom: 60px;
+				@include letter-spacing(200, 48);
+			}
+		}
+	}
+
+
+	/***********************************
+	SINGLE PAGE STYLES
+	***********************************/
+	.single-page {
+		padding: 80px 0 70px;
+
+		.main-content {
+
+			.entry-title {
+				margin-bottom: 50px;
+			}
+		}
+	}
+
+
+	/***********************************
+	FOOTER STYLE
+	***********************************/
+	.footer {
+		padding: 74px 0 62px;
+	}
+
+}/* 1366 */
+
+@media only screen and (max-width: 1199px) {
+	.container, .container-fluid {
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+
+	/***********************************
+	HEADER STYLE
+	***********************************/
+	.header {
+
+		.navbar {
+			padding: 26px 0 10px;
+			
+			.container {
+				padding-right: 30px;
+				padding-left: 30px;
+			}
+
+			.navbar-header {
+
+				.navbar-brand {
+
+					img {
+						max-width: 70px;
+					}
+				}
+			}
+
+			.navbar-collapse {
+
+				.navbar-nav {
+
+					> li {
+						
+						&:not(:last-child) {
+							margin-right: 30px;
+						}
+
+						> a {
+							font-size: 21px;
+							@include letter-spacing(50, 21);
+						}
+					}
+				}
+			}
+		}
+
+		&.stop {
+
+
+			.navbar {
+
+				.navbar-header {
+
+					.navbar-brand {
+
+						img {
+							max-width: 60px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.header-gutter {
+		height: 111px;
+	}
+
+
+	/***********************************
+	BANNER STYLE
+	***********************************/
+	.banner {
+		padding-top: 111px;
+	}
+
+	.page-banner {
+		padding-top: 111px;
+		min-height: 600px;
+	}
+
+	/***********************************
+	HOME PAGE STYLE
+	***********************************/
+	.films {
+		padding: 70px 0 ;
+
+		&__card {
+			min-height: 500px;
+		}
+	}
+
+	.designs {
+		padding: 70px 0;
+	}
+
+	.hm-about-us {
+		padding: 70px 0;
+	}
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.festival-logos {
+		padding: 60px 0 40px;
+	}
+
+	.films-empty {
+		padding: 70px 0 0;
+
+		&__content {
+
+			.title {
+				margin-bottom: 15px;
+			}
+
+			.sub-title {
+				margin-bottom: 10px;
+			}
+
+			.meta-wrap {
+				margin-bottom: 30px;
+			}
+
+			.desc {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	.credits {
+		padding: 90px 0;
+
+		.entry-title {
+			margin-bottom: 40px;
+		}
+	}
+
+	.photo-gallery {
+		padding: 70px 0 80px;
+
+		.entry-title {
+			margin-bottom: 40px;
+			@include letter-spacing(200, 42);
+		}
+	}
+
+	.awards, .press {
+
+		&__content {
+
+			.title {
+				margin-bottom: 30px;
+				@include letter-spacing(200, 42);
+			}
+			
+		}
+	}
+
+	.awards {
+		padding: 70px 0 50px;
+	}
+
+	.press {
+		padding: 50px 0 50px;
+	}
+
+	.partners {
+		padding: 40px 0 70px;
+
+		.entry-title {
+
+			.title {
+				margin-bottom: 40px;
+				@include letter-spacing(200, 42);
+			}
+		}
+	}
+
+	/***********************************
+	SINGLE PAGE STYLES
+	***********************************/
+	.single-page {
+		padding: 70px 0 60px;
+
+		.main-content {
+
+			.entry-title {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	
+}/* 1199 */
+
+
+
+@media only screen and (max-width: 991px) {
+	body { font-size: 21px; line-height: 30px; }
+	h1, .h1 {font-size: 48px; line-height: 60px; &.fs-lg, {font-size: 52px; line-height: 62px;} }
+	h2, .h2 {font-size: 42px;line-height: 52px;}
+	h3, .h3 {font-size: 36px;line-height: 44px;}
+	h4, .h4 {font-size: 32px;line-height: 42px;}
+
+	.container, .container-fluid {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+
+	.btn {
+		font-size: 18px;
+		padding: 20px 20px 18px 26px;
+
+		i {
+
+			&.icon-email {
+				font-size: 40px;
+			}
+		}
+	}
+
+	/***********************************
+	HEADER STYLE
+	***********************************/
+	.header {
+
+		.navbar {
+			
+			.container {
+				padding-right: 20px;
+				padding-left: 20px;
+			}
+		}
+	}
+
+	/***********************************
+	BANNER STYLE
+	***********************************/
+	.banner {
+		padding-top: 111px;
+
+	    &__content {
+
+	    	.title {
+	    		margin-bottom: 10px;
+	    		@include letter-spacing(50, 42);
+	    	}
+
+
+	    	ul.list-unstyled {
+
+	    		li {
+	    			font-size: 18px;
+	    			line-height: 30px;
+	    		}
+	    	}
+	    }
+	}
+
+	.page-banner {
+		padding-top: 111px;
+		min-height: 500px;
+	}
+
+	/***********************************
+	HOME PAGE STYLE
+	***********************************/
+	.films {
+
+		&__card {
+			min-height: 450px;
+		}
+
+		&__card-text {
+
+			.title {
+				@include letter-spacing(150, 52);
+			}
+		}
+	}
+
+	.hm-about-us {
+
+		&__content {
+
+
+			.des {
+				margin-bottom: 30px;
+
+				p {
+					font-size: 24px;
+					line-height: 36px;
+					margin-bottom: 30px;
+					@include letter-spacing(50, 20);
+				}
+			}
+
+			.social-conetct {
+				margin-bottom: 40px;
+
+				.label-title {
+					font-size: 24px;
+					line-height: 36px;
+					@include letter-spacing(50, 24);
+				}
+
+				.social-media {
+					margin-left: -10px;
+					margin-right: -10px;
+
+					li {
+						padding-left: 10px;
+						padding-right: 10px;
+
+						a {
+							font-size: 36px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+
+	.films-empty {
+		margin-bottom: 0px;
+
+		&__content {
+
+			.title {
+				margin-bottom: 15px;
+			}
+
+			.sub-title {
+				margin-bottom: 10px;
+			}
+
+			.meta-wrap {
+				margin-bottom: 20px;
+			}
+
+			.desc {
+				margin-bottom: 30px;
+
+				p {
+					font-size: 24px;
+					line-height: 36px;
+					@include letter-spacing(50, 24);
+				}
+			}
+		}
+
+		&__embed {
+			height: 500px;
+			margin-bottom: 0;
+		}
+	}
+
+	.credits {
+		padding: 80px 0;
+
+		.entry-title {
+			margin-bottom: 40px;
+		}
+
+		&__card {
+			flex-direction: column;
+		}
+
+
+		.credits-popup-fit {
+			min-width: 100%;
+			max-width: 100;
+			margin-right: 0;
+			margin-bottom: 20px;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&__card-content {
+
+			ul.list-unstyled {
+				margin-bottom: 15px;
+
+				li {
+					font-size: 24px;
+					line-height: 36px;
+
+					&:not( :last-child ) {
+						margin-bottom: 20px;
+					}
+				}
+			}
+
+			.btn-box {
+				margin-top: 60px;
+			}
+
+			.btn-view-credits {
+				min-width: 371px;
+			}
+		}
+	}
+
+	.photo-gallery {
+
+		.entry-title {
+			margin-bottom: 40px;
+			@include letter-spacing(150, 42);
+		}
+	}
+
+	.awards, .press {
+
+		&__content {
+
+			.title {
+				margin-bottom: 20px;
+				@include letter-spacing(150, 42);
+			}
+			
+		}
+	}
+
+	.partners {
+
+		.entry-title {
+
+			.title {
+				margin-bottom: 40px;
+				@include letter-spacing(150, 42);
+			}
+		}
+	}
+
+	/***********************************
+	SINGLE PAGE STYLES
+	***********************************/
+	.single-page {
+
+		.main-content {
+
+			.entry-title {
+				margin-bottom: 40px;
+			}
+		}
+	}
+
+	/***********************************
+	FOOTER STYLE
+	***********************************/
+	.footer {
+		padding: 64px 0 50px;
+	}
+
+
+}/* 991 */
+
+
+@media only screen and (max-width : 767px) {
+	body { font-size: 18px; line-height: 30px;}
+	h1, .h1 {font-size: 42px; line-height: 52px; &.fs-lg, {font-size: 48px; line-height: 60px;} }
+	h2, .h2 {font-size: 36px;line-height: 44px;}
+	h3, .h3 {font-size: 32px;line-height: 42px;}
+	h4, .h4 {font-size: 30px;line-height: 38px;}
+	h5, .h5 {font-size: 24px;line-height: 32px;}
+	h6, .h6 {font-size: 22px;line-height: 30px;}
+
+	section {
+		padding: 35px 0;
+	}
+
+	.container, .container-fluid {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+
+	/***********************************
+	HEADER STYLE
+	***********************************/
+	.header {
+
+		.navbar {
+			padding: 20px 0 7px;
+			
+			.container {
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+
+			.navbar-header {
+
+				.navbar-brand {
+
+					img {
+						max-width: 60px;
+					}
+				}
+			}
+
+			.navbar-collapse {
+
+				.navbar-nav {
+
+					> li {
+						
+						&:not(:last-child) {
+							margin-right: 24px;
+						}
+					}
+				}
+			}
+		}
+
+		&.stop {
+
+
+			.navbar {
+				padding: 10px 0;
+
+				.navbar-header {
+
+					.navbar-brand {
+
+						img {
+							max-width: 50px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.header-gutter {
+		height: 91px;
+	}
+
+
+	/***********************************
+	BANNER STYLE
+	***********************************/
+	.banner {
+		padding-top: 91px;
+
+	    &__content {
+
+	    	.title {
+	    		margin-bottom: 10px;
+	    		@include letter-spacing(50, 42);
+	    	}
+
+
+	    	ul.list-unstyled {
+	    		margin-left: -2px;
+	    		margin-right: -2px;
+
+	    		li {
+	    			padding-left: 2px;
+	    			padding-right: 2px;
+
+	    			&:after {
+	    				padding-left: 10px;
+	    			}
+	    		}
+	    	}
+	    }
+	}
+
+	.page-banner {
+		padding-top: 91px;
+		min-height: 450px;
+
+		&__content {
+
+			.title {
+				@include letter-spacing(50, 42px)
+			}
+		}
+	}
+
+
+	/***********************************
+	HOME PAGE STYLE
+	***********************************/
+	.films {
+
+		.entry-title {
+			margin-bottom: 30px;
+
+			.title {
+				letter-spacing: 4.4px;
+			}
+		}
+
+		&__card {
+			min-height: 330px;
+		}
+
+		&__card-text {
+
+			.title {
+				@include letter-spacing(150, 42);
+			}
+		}
+	}
+
+	.designs {
+
+		.entry-title {
+
+			.title {
+				letter-spacing: 4.4px;
+			}
+		}
+	}
+
+
+	.hm-about-us {
+
+		&__content {
+
+			.title {
+				letter-spacing: 4.4px;
+			}
+
+
+			.des {
+				margin-bottom: 30px;
+
+				p {
+					font-size: 18px;
+					line-height: 30px;
+				}
+			}
+
+			.social-conetct {
+				margin-bottom: 40px;
+
+				.label-title {
+					font-size: 18px;
+					line-height: 30px;
+				}
+			}
+		}
+	}
+
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+
+		&__content {
+
+			.title {
+				margin-bottom: 15px;
+			}
+
+			.sub-title {
+				margin-bottom: 10px;
+			}
+
+			.meta-wrap {
+				font-size: 24px;
+				margin-bottom: 20px;
+			}
+
+			.desc {
+				margin-bottom: 30px;
+
+				p {
+					font-size: 21px;
+					line-height: 32px;
+					@include letter-spacing(50, 21);
+				}
+			}
+		}
+
+		&__embed {
+			height: 400px;
+		}
+	}
+
+	.credits {
+
+		.entry-title {
+			margin-bottom: 30px;
+		}
+
+		&__card-content {
+
+			ul.list-unstyled {
+				margin-bottom: 15px;
+
+				li {
+					font-size: 24px;
+					line-height: 36px;
+
+					&:not( :last-child ) {
+						margin-bottom: 20px;
+					}
+				}
+			}
+
+			.btn-box {
+				margin-top: 60px;
+			}
+
+			.btn-view-credits {
+				min-width: 300px;
+			}
+		}
+	}
+
+	.photo-gallery {
+
+		.entry-title {
+			margin-bottom: 30px;
+			@include letter-spacing(150, 36);
+		}
+	}
+
+	.awards, .press {
+
+		&__content {
+
+			.title {
+				margin-bottom: 20px;
+				@include letter-spacing(150, 36);
+			}
+
+			.quick-links {
+
+				a {
+					line-height: 32px;
+				}
+			}
+			
+		}
+	}
+
+	
+	.partners {
+
+		.entry-title {
+
+			.title {
+				margin-bottom: 30px;
+				@include letter-spacing(150, 36);
+			}
+		}
+	}
+
+
+	/***********************************
+	SINGLE PAGE STYLES
+	***********************************/
+	.single-page {
+
+		.main-content {
+
+			.entry-title {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	/***********************************
+	FOOTER STYLE
+	***********************************/
+	.footer {
+		padding: 54px 0 40px;
+
+		&__entry-title {
+
+			span {
+				font-size: 20px;
+				@include letter-spacing(50, 20);
+			}
+		}
+
+		
+		&__widget-nav {
+
+			> li {
+				
+
+				> a {
+					font-size: 20px;
+					@include letter-spacing(50, 20);
+				}
+
+				&:after {
+					vertical-align: -1px;
+					letter-spacing: -4px;
+				}
+				
+			}
+		}
+	}
+
+}/* 767 */
+
+@media only screen and (max-width : 680px) {
+	h1, .h1 {font-size: 36px; line-height: 44px; &.fs-lg, {font-size: 42px; line-height: 52px;} }
+	h2, .h2 {font-size: 34px;line-height: 42px;}
+	h3, .h3 {font-size: 30px;line-height: 38px;}
+	h4, .h4 {font-size: 28px;line-height: 36px;}
+	h5, .h5 {font-size: 22px;line-height: 30px;}
+	h6, .h6 {font-size: 20px;line-height: 26px;}
+
+	/***********************************
+	HOME PAGE STYLE
+	***********************************/
+	.films {
+		padding: 50px 0;
+	}
+
+	.designs {
+		padding: 50px 0;
+	}
+
+	.hm-about-us {
+		padding: 50px 0;
+	}
+
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+
+		&__embed {
+			height: 300px;
+		}
+	}
+
+	.credits {
+
+		&__card-content {
+
+			.btn-box {
+				margin-top: 40px;
+			}
+
+			.btn-view-credits {
+				min-width: 280px;
+			}
+		}
+	}
+
+}/* 680 */
+
+
+@media only screen and (max-width : 575px) {
+	h1, .h1 {font-size: 34px; line-height: 42px; &.fs-lg, {font-size: 36px; line-height: 44px;} }
+	h2, .h2 {font-size: 30px;line-height: 36px;}
+	h3, .h3 {font-size: 28px;line-height: 36px;}
+	h4, .h4 {font-size: 24px;line-height: 32px;}
+	h5, .h5 {font-size: 20px;line-height: 30px;}
+	h6, .h6 {font-size: 18px;line-height: 24px;}
+
+	section {
+		padding: 30px 0;
+	}
+
+
+	/***********************************
+	HEADER STYLE
+	***********************************/
+	.header {
+
+		.navbar {
+
+			.navbar-collapse {
+
+				.navbar-nav {
+
+					> li {
+						display: none;
+					}
+
+					&.navbar--nav-right {
+
+						.mobile-navbar-toggler {
+							display: block !important;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/***********************************
+	BANNER STYLE
+	***********************************/
+	.banner {
+
+	    &__content {
+
+	    	.title {
+	    		margin-bottom: 6px;
+	    		@include letter-spacing(50, 36);
+	    	}
+
+
+	    	ul.list-unstyled {
+	    		max-width: 420px;
+	    		margin-left: auto;
+	    		margin-right: auto;
+
+	    		li {
+	    			font-size: 15px;
+	    			margin-bottom: 6px;
+
+	    			&:after {
+	    				padding-left: 10px;
+	    			}
+	    		}
+	    	}
+	    }
+	}
+
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+		padding: 40px 0 40px;
+
+		&__content {
+
+
+			.desc {
+
+				p {
+					font-size: 18px;
+					line-height: 32px;
+				}
+			}
+		}
+
+		&__embed {
+			height: 280px;
+		}
+	}
+
+	.credits {
+
+		&__card-content {
+
+			.btn-box {
+				margin-top: 30px;
+			}
+
+			.btn-view-credits {
+				min-width: 260px;
+			}
+		}
+	}
+
+	
+	.partners {
+	    padding: 30px 0 0px;
+
+	    .entry-title {
+
+	    	.title {
+	    		@include letter-spacing(50, 36);
+	    	}
+	    }
+	}
+
+
+}/* 575 */
+
+@media only screen and (max-width : 480px) {
+
+	section {
+		padding: 20px 0;
+	}
+
+	p {
+	    margin: 0 0 20px;
+	}
+
+	.btn {
+		font-size: 16px;
+	}
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+
+		&__embed {
+			height: 260px;
+		}
+	}
+
+
+	/***********************************
+	FOOTER STYLE
+	***********************************/
+	.footer {
+		padding: 40px 0 30px;
+
+		&__entry-title {
+			margin-bottom: 24px;
+		}
+	}
+
+	
+
+}/* 480 */
+
+@media only screen and (max-width : 420px) {
+
+	.page-banner {
+		min-height: 300px;
+
+		&__content {
+
+			.title {
+				font-size: 32px;
+			}
+		}
+	}
+
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+
+		&__embed {
+			height: 240px;
+		}
+	}
+
+	/***********************************
+	FOOTER STYLE
+	***********************************/
+	.footer {
+
+		&__widget-nav {
+
+			> li {
+				
+
+				> a {
+					font-size: 18px;
+				}
+
+				&:after {
+					vertical-align: -1px;
+					letter-spacing: -4px;
+				}
+				
+			}
+		}
+	}
+
+}/* 420 */
+
+@media only screen and (max-width : 375px) {
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+
+		&__embed {
+			height: 200px;
+		}
+	}
+}/* 375 */
+
+@media only screen and (max-width : 320px) {
+	/***********************************
+	FILMS DETAILS PAGE STYLE
+	***********************************/
+	.films-empty {
+
+		&__embed {
+			height: 180px;
+		}
+	}
+}/* 320 */
+
+
+@media only screen and (min-height: 1080px) {
+	/***********************************
+	HEADER STYLE
+	***********************************/
+	.header {
+
+		.navbar {
+			padding: 87px 0 20px;
+		}
+	}
+
+	/***********************************
+	BANNER STYLE
+	***********************************/
+
+	.banner {
+		padding-bottom: 240px;
+	}
+}
+
+@media only screen and (max-height: 280px) {
+
+	/***********************************
+	BANNER STYLE
+	***********************************/
+	.banner {
+		padding-bottom: 60px;
+	}
+}
