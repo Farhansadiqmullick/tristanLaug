@@ -1,6 +1,12 @@
-<?php get_header(); 
+<?php
+/*
+    Template Name: Home Template
+*/
+
+ get_header(); 
 $banner = get_field('banner');
 $designation = $banner['designation'];
+$description = $banner['description'];
 ?>
 		<section class="banner has--overlay" style="background-image:linear-gradient(black, black), url('<?php echo esc_attr($banner['image']); ?>');">
 			<div class="container h-100">
@@ -8,6 +14,7 @@ $designation = $banner['designation'];
 					<div class="col-12">
 						<div class="banner__content text-center">
 							<h1 class="title fs text-uppercase"><?php echo esc_html($banner['name']); ?></h1>
+							<p><?php echo esc_html($description); ?></p>
 							<ul class="list-unstyled list-inline text-uppercase">
 								<li><?php echo esc_html($designation['title_1'])?></li>
 								<li><?php echo esc_html($designation['title_2'])?></li>
@@ -23,7 +30,9 @@ $designation = $banner['designation'];
 
 			<section class="films" id="scroll-films">
 				<div class="container">
-				<?php $films = get_field('films'); ?>
+                <?php $films = get_field('films'); 
+                
+                ?>
 					<div class="row">
 						<div class="col-12">
 							<div class="entry-title text-center">
@@ -122,10 +131,10 @@ $designation = $banner['designation'];
 
 			<section class="designs" id="scroll-designs">
 				<div class="container">
-				<?php 
+                <?php 
 						$designs = get_field('designs'); 
 						var_dump($designs);
-						?>	
+							?>	
 				
 				<div class="row">
 						<div class="col-12">
@@ -158,7 +167,8 @@ $designation = $banner['designation'];
 			<section class="hm-about-us" id="scroll-contact">
 				<div class="container">
 					<div class="row">
-						<?php $about = get_field('about'); ?>
+                        <?php echo get_field('about'); 
+                       ?>
 						<div class="col-12">
 							<div class="hm-about-us__content text-center">
 								<h2 class="title text-uppercase"><?php echo esc_html($about['title']); ?></h2>

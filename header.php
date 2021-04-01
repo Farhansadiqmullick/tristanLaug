@@ -96,4 +96,5 @@
 					</div>
 				</div>
 			</nav> <!-- /nav -->
+			<?php var_dump(get_the_ID());?>
 		</header> <!-- /header -->
