@@ -118,7 +118,7 @@ $description = $banner['description'];
 								</div>
 							</a>
 								<?php
-							endforeach; endif; ?>
+							endforeach; wp_reset_postdata(); endif; ?>
 						</div><!-- /films__card -->
 					</div>
 				</div>
@@ -126,10 +126,8 @@ $description = $banner['description'];
 
 			<section class="designs" id="scroll-designs">
 				<div class="container">
-                <?php 
-						$designs = get_field('designs'); 
-						var_dump($designs);
-							?>	
+             		 <?php 
+						$designs = get_field('designs'); ?>	
 				
 				<div class="row">
 						<div class="col-12">
@@ -140,19 +138,19 @@ $description = $banner['description'];
 					</div>
 							<?php $galleries = $designs['gallery']; 
 							
-							// if(have_posts($galleries)) :
-							// 	foreach($galleries as $gallery) :
-							// 		var_dump($gallery);
-							?>
-							<div class="row popup-gallery last-none">
+							if(have_posts($galleries)) : ?>
+								<div class="row popup-gallery last-none">
+							<?php	foreach($galleries as $gallery) : ?>
 								<div class="col-lg-4 col-md-6 col-sm-6">
-									<a href="../images/designs-1.jpg" class="popup-gallery-item">
+
+							<?php	printf('<a href="%s" class="popup-gallery-item">
 										<figure class="media">
-											<img src="<?php echo get_template_directory_uri( )."/images/designs-1.jpg"; ?>" alt="" class="img-fluid">
+											<img src="%s"; ?>" alt="%s" class="img-fluid">
 										</figure>
-									</a>
+									</a>',$gallery, $gallery, get_template_directory_uri( )."/images/designs-1.jpg");?>
+									
 								</div><!-- /gallery-popup-item -->
-							<?php //endforeach; endif;?>
+							<?php endforeach; endif;?>
 
 						
 					</div>
@@ -172,21 +170,27 @@ $description = $banner['description'];
 									<p><?php echo esc_html($about['para_1']); ?></p>
 									<p><?php echo esc_html($about['para_2']); ?></p>
 								</div>
-
+								<?php $media = get_field('media');
+								$group = $media['group'];
+								$select = $group['select']; ?>
 								<div class="social-conetct">
-									<div class="label-title">Connect with me below:</div>
+									<div class="label-title"><?php esc_html($media['title']);?></div>
 
 									<ul class="social-media list-inline">
-										<li><a href="#" class="icon-twitter" target="_blank"></a></li>
-										<li><a href="#" class="icon-vimeo" target="_blank"></a></li>
-										<li><a href="#" class="icon-instagram" target="_blank"></a></li>
-										<li><a href="#" class="icon-youtube" target="_blank"></a></li>
-										<li><a href="#" class="icon-behance" target="_blank"></a></li>
+										<?php if($select) :
+											foreach($select as $social)
+												{
+									
+													printf('<li><a href="%s" class="icon-%s" target="_blank"></a></li>',esc_url($group[$social]), esc_html($social));
+												}
+										endif;
+											?>
 									</ul>
 								</div>
 
 								<div class="btn-box">
-									<a href="#" class="btn">Contact Me <i class="icon-email"></i></a>
+									<?php $contact = $media['contact']; ?>
+									<a href="<?php echo esc_url($contact['link'])?>" class="btn"><?php echo esc_html($contact['title']); ?><i class="icon-email"></i></a>
 								</div>
 							</div>
 						</div>
@@ -198,9 +202,10 @@ $description = $banner['description'];
 		<section class="footer-top" id="scroll-tris">
 			<div class="container">
 				<div class="row">
+					<?php  $image = get_field('image'); ?>
 					<div class="col-12">
 						<figure class="media justify-content-center">
-							<img src="<?php echo get_template_directory_uri( )."/images/about.png"; ?>" class="img-fluid" alt="">
+							<?php printf('<img src="%s" class="img-fluid" alt="%s">', esc_attr($image), get_template_directory_uri()."/images/about.png"); ?>
 						</figure>
 					</div>
 				</div>

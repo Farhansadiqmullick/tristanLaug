@@ -12,7 +12,7 @@ function tristanlaug_setup(){
     register_nav_menus( array(
         'menu' => esc_html(__('Primary Menu', 'tristanlaug')),
         'footer' => esc_html(__('Footer Menu', 'tristanlaug')),
-    ),  );
+    ),  );    
 }
 add_action( 'after_setup_theme', 'tristanlaug_setup');
 
@@ -78,8 +78,5 @@ function tristanlaug_acf_sub_init() {
         ));
     }
 }
-
-
-
 
 ?>

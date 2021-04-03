@@ -3135,3 +3135,12 @@ MEDIA QUERIES
     padding-bottom: 60px;
   }
 }
+
+
+/*
+ After Development
+*/
+
+.uber-grid-edit-wrapper {
+  display: none !important; 
+}
