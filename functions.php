@@ -72,11 +72,17 @@ function tristanlaug_acf_sub_init() {
         ));
          // Add sub page.
          $child = acf_add_options_sub_page(array(
-            'page_title'  => __('Single Film'),
-            'menu_title'  => __('Single Film'),
+            'page_title'  => __('404 Error'),
+            'menu_title'  => __('404 Error'),
             'parent_slug' => $parent['menu_slug'],
         ));
     }
 }
+
+add_filter('wp_nav_menu', 'add_classes_on_a');
+function add_classes_on_a($ulclass) 
+{ return preg_replace('/<a /', '<a class="scroll-trigger"', $ulclass); }
+
+
 
 ?>

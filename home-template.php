@@ -45,20 +45,15 @@ $description = $banner['description'];
 							
 							<?php
 								$posts = $films['film'];
-								if(have_posts($posts)):	
-									
-								
+								if(have_posts($posts)):
 							?>
 							<a href="<?php the_permalink(150) ;?>" class="films__card has--overlay">
 								<figure class="films__card-media">
 									<?php
-									$image = get_the_post_thumbnail_url( $posts->ID, 'large');
-								
-									
-								
-									if($image){
-										printf( '<img src="%s" class="img-fluid" alt="%s">',  esc_url($image), get_template_directory_uri()."/images/empty.jpg");
-									}	
+										$image = get_the_post_thumbnail_url( $posts->ID, 'large');
+											if($image){
+											printf( '<img src="%s" class="img-fluid" alt="%s">',  esc_url($image), get_template_directory_uri()."/images/empty.jpg");
+										}	
 									?>
 								</figure>
 								<div class="films__card-text text-center">

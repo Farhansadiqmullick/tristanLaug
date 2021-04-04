@@ -3144,3 +3144,9 @@ MEDIA QUERIES
 .uber-grid-edit-wrapper {
   display: none !important; 
 }
+
+ul>li>a{
+#scroll-trigger{
+  
+};
+}

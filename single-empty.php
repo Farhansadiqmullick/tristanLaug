@@ -24,60 +24,35 @@ $image = $banner['image'];
 			<section class="festival-logos">
 				<div class="container">
                     <?php $logos = get_field('logos'); 
-                    $image = $logos['image'];
+                    $single_image = $logos['image'];
                     $images = $logos['gallery'];?>
 					<div class="row last-none justify-content-center">
 						<div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
 							<a class="festival-logos__item">
-                            <?php 
-                            if($image){
-                                printf('<img src="%s" class="img-fluid" alt="%s">', esc_attr($image), get_template_directory_uri().'/images/festival-logos-1.png');
-                            }
-                            ?>
-                            </a>
+								<?php 
+								
+									printf('<a class="festival-logos__item" href="%s"><img src="%s" class="img-fluid" alt="%s"></a>', esc_url($single_image['link']), esc_attr($single_image['image']), get_template_directory_uri().'/images/festival-logos-1.png');
+								?>
+                            
 						</div><!-- /festival-logos__item -->
-
-						<div class="col-lg-2 col-md-3 col-sm-6  d-flex justify-content-center align-items-center">
-                            <a class="festival-logos__item">
-                                <?php 
-                                if($images[0]){
-                                    printf('<img src="%s" class="img-fluid" alt="%s">', esc_attr($images[0]), get_template_directory_uri().'/images/festival-logos-2.png');
+							<?php 
+								if($images) : 
+								foreach($images as $image)
+								{
+									printf('<div class="col-lg-2 col-md-3 col-sm-6  d-flex justify-content-center align-items-center">
+									<a class="festival-logos__item" href="%s">
+									<figure class="media">
+										<img src="%s" alt="%s" class="img-fluid">
+									</figure>
+								</a></div>',$image['link'], $image['image'], get_template_directory_uri( )."/images/festival-logos-1.png");
                                 }
-                                ?>
-                            </a>    
+							endif;?>
+                                
                         
                         
-						</div><!-- /festival-logos__item -->
+						<!-- /festival-logos__item -->
 
-						<div class="col-lg-2 col-md-3 col-sm-6  d-flex justify-content-center align-items-center">
-                            <a class="festival-logos__item">
-                                <?php 
-                                if($images[1]){
-                                    printf('<img src="%s" class="img-fluid" alt="%s">', esc_attr($images[1]), get_template_directory_uri().'/images/festival-logos-3.png');
-                                }
-                                ?>
-                            </a>  
-						</div><!-- /festival-logos__item -->
-
-						<div class="col-lg-2 col-md-3 col-sm-6  d-flex justify-content-center align-items-center">
-                            <a class="festival-logos__item">
-                                <?php 
-                                if($images[2]){
-                                    printf('<img src="%s" class="img-fluid" alt="%s">', esc_attr($images[2]), get_template_directory_uri().'/images/festival-logos-4.png');
-                                }
-                                ?>
-                            </a>  
-						</div><!-- /festival-logos__item -->
-
-						<div class="col-lg-2 col-md-3 col-sm-6  d-flex justify-content-center align-items-center">
-                             <a class="festival-logos__item">
-                                <?php 
-                                if($images[3]){
-                                    printf('<img src="%s" class="img-fluid" alt="%s">', esc_attr($images[3]), get_template_directory_uri().'/images/festival-logos-5.png');
-                                }
-                                ?>
-                            </a>  
-						</div><!-- /festival-logos__item -->
+						
 					</div>
 				</div>
 			</section><!-- /festival-logos -->
@@ -191,23 +166,14 @@ $image = $banner['image'];
 							<div class="entry-title text-center">
 								<h2 class="title text-uppercase"><?php echo esc_html($scenes['title'])?></h2>
 							</div>
+							<?php 
+								if($scenes) :
+								$gallery = $scenes['gallery'];
+								printf('%s',$gallery);
+								endif;	 ?>
 						</div>
 					</div>
 
-					<div class="row popup-gallery last-none">
-						<?php 
-						$gallery = $scenes['gallery'];
-							foreach($gallery as $scene) : ?>
-						<div class="col-md-6 col-sm-6">
-							<?php printf('<a href="%s" class="popup-gallery-item">
-									<figure class="media">
-										<img src="%s" alt="" class="img-fluid">
-									</figure>
-								</a>',$scene, $scene, get_template_directory_uri().'/images/gallery-1.jpg');
-								?>
-						</div><!-- /gallery-popup-item -->
-							<?php endforeach; ?>
-					</div>
 				</div>
 			</section><!-- /photo-gallery -->
 
