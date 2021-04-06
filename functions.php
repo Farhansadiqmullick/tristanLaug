@@ -39,9 +39,9 @@ function tristanlaug_custom_mime_types( $mimes ) {
 }
 add_filter( 'upload_mimes', 'tristanlaug_custom_mime_types' );
 
-if( function_exists('acf_add_options_page') ) {
-	acf_add_options_page();
-}
+// if( function_exists('acf_add_options_page') ) {
+// 	acf_add_options_page();
+// }
 
 
 add_action('acf/init', 'tristanlaug_acf_sub_init');
@@ -52,36 +52,36 @@ function tristanlaug_acf_sub_init() {
 
         // Add parent.
         $parent = acf_add_options_page(array(
-            'page_title'  => __('Theme General Settings'),
-            'menu_title'  => __('Theme Settings'),
+            'page_title'  => __('Options'),
+            'menu_title'  => __('Options'),
             'redirect'    => false,
         ));
 
         // Add sub page.
-        $child = acf_add_options_sub_page(array(
-            'page_title'  => __('Header'),
-            'menu_title'  => __('Header'),
-            'parent_slug' => $parent['menu_slug'],
-        ));
+        // $child = acf_add_options_sub_page(array(
+        //     'page_title'  => __('Header'),
+        //     'menu_title'  => __('Header'),
+        //     'parent_slug' => $parent['menu_slug'],
+        // ));
 
-          // Add sub page.
-          $child = acf_add_options_sub_page(array(
-            'page_title'  => __('Footer'),
-            'menu_title'  => __('Footer'),
-            'parent_slug' => $parent['menu_slug'],
-        ));
-         // Add sub page.
-         $child = acf_add_options_sub_page(array(
-            'page_title'  => __('404 Error'),
-            'menu_title'  => __('404 Error'),
-            'parent_slug' => $parent['menu_slug'],
-        ));
+        //   // Add sub page.
+        //   $child = acf_add_options_sub_page(array(
+        //     'page_title'  => __('Footer'),
+        //     'menu_title'  => __('Footer'),
+        //     'parent_slug' => $parent['menu_slug'],
+        // ));
+        //  // Add sub page.
+        //  $child = acf_add_options_sub_page(array(
+        //     'page_title'  => __('404 Error'),
+        //     'menu_title'  => __('404 Error'),
+        //     'parent_slug' => $parent['menu_slug'],
+        // ));
     }
 }
 
 add_filter('wp_nav_menu', 'add_classes_on_a');
 function add_classes_on_a($ulclass) 
-{ return preg_replace('/<a /', '<a class="scroll-trigger"', $ulclass); }
+{ return preg_replace('/<a /', '<a class="scroll-trigger"', $ulclass);}
 
 
 

@@ -45,7 +45,10 @@
 			</div>
 		</div><!-- /mobile-header -->
 
+	
 		<header class="header transparent">
+
+		
 			<nav class="navbar navbar-expand">
 				<div class="container">
 					<div class="navbar-header">

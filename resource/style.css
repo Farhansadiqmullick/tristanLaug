@@ -699,7 +699,7 @@ HEADER STYLE
 .header.transparent .navbar .navbar-collapse .navbar-nav > li a {
   color: #FFFFFF;
 }
-.header.transparent .navbar .navbar-collapse .navbar-nav > li.acitve a, .header.transparent .navbar .navbar-collapse .navbar-nav > li:hover a, .header.transparent .navbar .navbar-collapse .navbar-nav > li:focus a {
+.header.transparent .navbar .navbar-collapse .navbar-nav > li.active a, .header.transparent .navbar .navbar-collapse .navbar-nav > li:hover a, .header.transparent .navbar .navbar-collapse .navbar-nav > li:focus a {
   color: #c5c6c5;
 }
 .header.stop .navbar {
@@ -3143,10 +3143,4 @@ MEDIA QUERIES
 
 .uber-grid-edit-wrapper {
   display: none !important; 
-}
-
-ul>li>a{
-#scroll-trigger{
-  
-};
 }

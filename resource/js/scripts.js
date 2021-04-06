@@ -40,6 +40,8 @@
 
 	// trigger scroll
     $('a.scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+        $('a.scroll-trigger').parent().removeClass('active');
+        $(this).parent().addClass('active');
         if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
             var o = $(this.hash);
             if ((o = o.length ? o : $("[name=" + this.hash.slice(1) + "]")).length) return $("html, body").animate({

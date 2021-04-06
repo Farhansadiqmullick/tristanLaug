@@ -24,7 +24,7 @@ $image = $banner['image'];
 			<section class="single-page">
 				<div class="container">
                 <?php $about = get_field('about');
-                $contents = $about['content']; ?>
+                $content = $about['content']; ?>
 					<div class="row">
 						<div class="col-12">
 							<main class="main-content">
@@ -34,13 +34,7 @@ $image = $banner['image'];
 									</div>
 
 									<div class="entry-content">
-                                        <?php 
-                                        if($contents) : 
-                                            foreach($contents as $content) :
-                                                $text = $content['paragraph'];
-                                        ?>
-                                            <p><?php echo esc_html($text); ?></p>
-                                        <?php endforeach; endif; ?>
+										<?php echo $content; ?>
 									</div>
 								</article><!-- /articles -->
 							</main>

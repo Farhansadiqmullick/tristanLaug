@@ -10,14 +10,22 @@
 	/** Adobe typekit font */
 	try{Typekit.load({ async: true });}catch(e){};
 
-	/*** Sticky header */
-	$(window).scroll(function(){
-		if($("body").scrollTop() > 0 || $("html").scrollTop() > 0) {
+    /*** Sticky header */
+    var portfolio = document.querySelector('.portfolio');
+
+    $(window).scroll(function(){
+		if (portfolio) {
+
+			if($("body").scrollTop() > banner.offsetHeight-92 || $("html").scrollTop() > banner.offsetHeight-92) {
+				$(".header").removeClass("stop");
+			} 
+		}
+		if($("body").scrollTop() > 0 || $("html").scrollTop() > 0){
 			$(".header").addClass("stop");
 		} else {
 			$(".header").removeClass("stop");
-		}
-	});
+        }
+    })
 
 	/*** Sidr Menu */
 	$('.navbar-toggle').sidr({
