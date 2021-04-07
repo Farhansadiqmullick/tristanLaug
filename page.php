@@ -5,13 +5,14 @@ get_header();
 
 <?php $banner = get_field('banner');
 $image = $banner['image'];
+$overlay = $banner['overlay'];
 ?>
 	<section class="page-banner has--overlay" style="background-image:url('<?php echo esc_url($image); ?>');">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<div class="page-banner__content text-center">
-							<h1 class="title text-uppercase"><?php echo esc_html($banner['title']); ?></h1>
+							<?php printf('<h1 class="title text-uppercase" style="color:%s">%s</h1>',$overlay,esc_html($banner['title']));?>
 						</div>
 					</div>
 				</div>
