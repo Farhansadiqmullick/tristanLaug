@@ -4,34 +4,44 @@ Template Name: Single Film Template
 */
 
 get_header();
-$banner = get_field('banner');
-if($banner!= 'null') :  
-$image = $banner['image']; ?>
+
+	$banner = get_field('banner');
+	$image = get_the_post_thumbnail_url(get_the_ID(), 'large');
+	?>
 
 		<section class="page-banner has--overlay" style="background-image:url(<?php echo esc_attr($image) ;?>);">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
 						<div class="page-banner__content text-center">
-							<h1 class="title text-uppercase"><?php echo esc_html($banner['title']);?></h1>
+							<?php if($banner){
+								printf('<h1 class="title text-uppercase">%s</h1>',esc_html($banner));
+							}else{
+								
+								printf('<h1 class="title text-uppercase">%s</h1>',esc_html(get_the_title(get_the_ID())));
+							}
+							?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section><!-- /banner -->
 
+		<?php
+		$logos = get_field('logos');
+		if(!empty($logos)) : ?>
+
 		<div id="primary" class="content-area">
 			<section class="festival-logos">
 				<div class="container">
-                    <?php $logos = get_field('logos');
+                    <?php
                     $single_image = $logos['image'];
-                    $images = $logos['gallery'];?>
+					$images = $logos['gallery'];?>
 					<div class="row last-none justify-content-center">
 						<div class="col-lg-12 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
 							<a class="festival-logos__item">
 								<?php 
-								
-									printf('<a class="festival-logos__item" href="%s"><img src="%s" class="img-fluid" alt="%s"></a>', esc_url($single_image['link']), esc_attr($single_image['image']), get_template_directory_uri().'/images/festival-logos-1.png');
+									printf('<a class="festival-logos__item" href="%s"><img src="%s" class="img-fluid" alt=""></a>', esc_url($single_image['link']), esc_attr($single_image['image']), get_template_directory_uri().'/images/festival-logos-1.png');
 								?>
                             
 						</div><!-- /festival-logos__item -->
@@ -42,7 +52,7 @@ $image = $banner['image']; ?>
 									printf('<div class="col-lg-2 col-md-3 col-sm-6  d-flex justify-content-center align-items-center">
 									<a class="festival-logos__item" href="%s">
 									<figure class="media">
-										<img src="%s" alt="%s" class="img-fluid">
+										<img src="%s" alt="" class="img-fluid">
 									</figure>
 								</a></div>',$image['link'], $image['image'], get_template_directory_uri( )."/images/festival-logos-1.png");
                                 }
@@ -54,35 +64,47 @@ $image = $banner['image']; ?>
 					</div>
 				</div>
 			</section><!-- /festival-logos -->
-<?php endif;?>
+		</div>
+			<?php endif;
+			$details = get_field('details');
+			if(!empty($details)) :
+			?>
+		<div id="primary" class="content-area">
 			<section class="films-empty" style="background-color: #866F37; color: #fff;">
 				<div class="container">
-                    <?php $details = get_field('details');
+                    <?php 
                     $notes = $details['details'];
-                    $video = $details['video']; 
-                    ?>
-					<div class="row">
-						<div class="col-12">
-							<div class="films-empty__content text-center">
-								<h2 class="title h1 text-uppercase"><?php echo esc_html($details['title'])?></h2>
-								<h4 class="sub-title text-uppercase"><?php _e('Dir: ', 'TristanLaug');?><?php echo esc_html($details['name']);?></h4>
-								<div class="meta-wrap"><?php echo esc_html($notes['year'])."/".esc_html($notes['time'])."min /".esc_html($notes['location'])."/".esc_html($notes['language']);?></div>
-								<div class="desc">
-									<p><?php echo esc_html($details['description'])?></p>
+					$video = $details['video'];  ?>
+					<?php if($details) :?>
+						<div class="row">
+							<div class="col-12">
+								<div class="films-empty__content text-center">
+									<h2 class="title h1 text-uppercase"><?php echo esc_html($details['title'])?></h2>
+									<h4 class="sub-title text-uppercase"><?php _e('Dir: ', 'TristanLaug');?><?php echo esc_html($details['name']);?></h4>
+									<div class="meta-wrap"><?php echo esc_html($notes['year'])?><?php _e('/', 'Tristanlaug')?><?php echo esc_html($notes['time'])?><?php _e('min /', 'Tristanlaug')?><?php echo esc_html($notes['location'])?><?php _e('/', 'Tristanlaug')?><?php echo esc_html($notes['language']);?></div>
+									
+									<div class="desc">
+										<p><?php echo esc_html($details['description'])?></p>
+									</div>
 								</div>
-							</div>
-
-							<div class="films-empty__embed">
-								<iframe src='<?php echo esc_url($video['link'])?>' frameborder='0' allow="autoplay; fullscreen; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+								<?php if($video) :?>
+									<div class="films-empty__embed">
+										<iframe src="<?php echo esc_url($video)?>" frameborder='0' allow="autoplay; fullscreen; picture-in-picture" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+									</div>
+								<?php endif;?>
 							</div>
 						</div>
-					</div>
+					<?php endif;?>
 				</div>
 			</section><!-- /films-empty -->
-
+		</div>
+		<?php endif;
+		$credits = get_field('credits'); 
+		if(!empty($credits)) : ?>
+		<div id="primary" class="content-area">
 			<section class="credits">
 				<div class="container">
-					<?php $credits = get_field('credits'); ?>
+					
 					<div class="row">
 						<div class="col-12">
 							<div class="entry-title text-center">
@@ -96,50 +118,48 @@ $image = $banner['image']; ?>
 
 							<?php 
 							printf('<a class="credits-popup-fit" href="%s">
-							<img src="%s" class="img-fluid" alt="%s">
+							<img src="%s" class="img-fluid" alt="">
 						</a>', $credits['image'], $credits['image'],get_template_directory_uri()."/images/credits-1.jpg");
 							?>
-
-							<?php $content = $credits['content']; ?>
 								<div class="credits__card-content">
-
 									<ul class="list-unstyled">
+										<?php if($credits['year']) : ?>
 										<li>
 											<strong><?php _e('Year', 'TristanLaug')?></strong>
-											<span><?php echo esc_html($content['year']); ?></span>
+											<span><?php echo esc_html($credits['year']); ?></span>
 										</li>
 										<li>
 											<strong><?php _e('Director: ', 'TristanLaug')?></strong> 
-											<span><?php echo esc_html($content['director']); ?></span>
+											<span><?php echo esc_html($credits['director']); ?></span>
 										</li>
 										<li>
 											<strong><?php _e('Producer: ', 'TristanLaug')?></strong>
-											<span><?php echo esc_html($content['producer']); ?></span>
+											<span><?php echo esc_html($credits['producer']); ?></span>
 										</li>
-										<?php $starrings = $content['starring']; ?>
+										<?php endif; 
+										$starrings = $credits['starring'];
+										if($starrings) : ?>
 										<li>
 											<strong><?php _e('Starring: ', 'TristanLaug')?></strong>
-
 											<?php foreach($starrings as $starring) : ?>
 													<span><?php echo esc_html($starring['name']);?></span>
-											<?php endforeach;
-											?>
-											
-										 
+											<?php endforeach; ?>
 										</li>
+										<?php endif;?>
 									</ul>
-
+							<?php if($credits['executive']) :?>
 									<ul class="list-unstyled view-credits">
 										<li>
 											<strong><?php _e('Executive Producer: ', 'TristanLaug')?></strong>
-											<span><?php echo esc_html($content['executive']); ?></span>
+											<span><?php echo esc_html($credits['executive']); ?></span>
 										</li>
 										<li>
-											<?php $casts = $content['cast']; ?>
+											<?php $casts = $credits['cast']; ?>
 											<strong><?php _e('Cast: ', 'TristanLaug')?></strong>
-											<?php foreach($casts as $cast) : ?>
-											<span><?php echo esc_html($cast['name']); ?></span>  
-											<?php endforeach; ?>
+											<?php if($casts) :  
+												foreach($casts as $cast) : ?>
+												<span><?php echo esc_html($cast['name']); ?></span>  
+											<?php endforeach; endif; ?>
 										</li>
 									</ul>
 									<div class="btn-box">
@@ -149,17 +169,21 @@ $image = $banner['image']; ?>
 											<i class="icon-view-credits"></i>
 										</a>
 									</div>
+							<?php endif;?>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section><!-- /credits -->
-
+		</div>
+			<?php endif;
+			$scenes = get_field('scenes'); 
+			if(!empty($scenes)) : ?>
+		<div id="primary" class="content-area">
 			<section class="photo-gallery">
 				<div class="container">
 					<div class="row">
-						<?php $scenes = get_field('scenes'); ?>
 						<div class="col-12">
 							<div class="entry-title text-center">
 								<h2 class="title text-uppercase"><?php echo esc_html($scenes['title'])?></h2>
@@ -174,10 +198,15 @@ $image = $banner['image']; ?>
 
 				</div>
 			</section><!-- /photo-gallery -->
-
+		</div>
+			<?php endif;
+			$awards = get_field('awards');
+			if(!empty($awards)) :
+			?>
+		<div id="primary" class="content-area">
 			<section class="awards">
 				<div class="container">
-					<?php $awards = get_field('awards');
+					<?php 
 					$awards_r = $awards['awards'];?>
 					<div class="row">
 						<div class="col-12">
@@ -196,9 +225,13 @@ $image = $banner['image']; ?>
 				</div>
 			</section><!-- /awards -->
 
+			<?php endif; 
+			$press_rev = get_field('press');
+			if(!empty($press_rev)) :?>
+			
 			<section class="press">
 				<div class="container">
-					<?php $press_rev = get_field('press');
+					<?php 
 					$press_r = $press_rev['press']; ?>
 					<div class="row">
 						<div class="col-12">
@@ -218,9 +251,13 @@ $image = $banner['image']; ?>
 				</div>
 			</section><!-- /press -->
 
+			<?php endif; 
+			$partners = get_field('partners');
+			if(!empty($partners)) : ?>
+			
 			<section class="partners">
 				<div class="container">
-					<?php $partners = get_field('partners');
+					<?php 
 					$images = $partners['images']; 
 					?>
 					<div class="row">
@@ -246,4 +283,4 @@ $image = $banner['image']; ?>
 				</div>
 			</section><!-- /partners -->
 		</div><!-- /content-area -->
-<?php get_footer();?>
+	<?php endif; get_footer();?>

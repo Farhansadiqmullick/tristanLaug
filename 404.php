@@ -1,16 +1,14 @@
-<?php 
-
-get_header();
-?>
+<?php
+get_header();?>
 <div id="primary" class="content-area">
-
+<div class="header-gutter"></div>
         <section class="banner">
 			<div class="container new">
 				<div class="row">
 					<div class="col-md-12">
                         <div class="entry-title text-center">
 							<?php
-                             $error = get_field('error', 'options');
+							 $error = get_field('error', 'option');
                                 echo '<div class="entry-title text-center">';
 								if ($error['title']) 
 								{
@@ -44,7 +42,7 @@ get_header();
 								}
 								else
 								{
-									printf('<a href="%s" class="btn">%s</a>', esc_url( home_url( '/' ) ), 'Go Back To Home');
+									printf('<a href="%s" class="btn">%s</a>', esc_url( home_url( '/' ) ) , 'Go Back To Home',);
 								}
 								echo '</div>';
 							?>

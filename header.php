@@ -45,10 +45,7 @@
 			</div>
 		</div><!-- /mobile-header -->
 
-	
-		<header class="header transparent">
-
-		
+		<header class="header <?php if(!is_page_template('portfolio-template.php')  && !is_404()) echo 'transparent';?> ">
 			<nav class="navbar navbar-expand">
 				<div class="container">
 					<div class="navbar-header">
@@ -94,9 +91,8 @@
 									'theme_location'     => 'menu',
 									'depth'              => 1,
 									'container'          => false,
-									'menu_class'         => 'nav navbar-nav ml-auto',
-									'menu_id'            => '',
-									'a_class'			=> 'scroll-trigger',					
+									'menu_class'         => 'nav navbar-nav',
+									'menu_id'            => '',					
 									'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
 									'walker'             => new wp_bootstrap_navwalker(),
 								));

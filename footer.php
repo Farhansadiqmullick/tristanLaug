@@ -3,7 +3,7 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="footer__entry-title text-uppercase">
-							<?php $footer = get_field('content', 'option'); 
+							<?php $footer = get_field('footer', 'option'); 
 								$name = $footer['name'];
 								$designtion = $footer['designation']
 							?>

@@ -284,7 +284,11 @@ HEADER STYLE
 						@include transition(all 0.3s);
 					}
 
-					&.active, &:hover, &:focus {
+					&.active{
+						color: #c5c6c5;
+					}
+					
+					&:hover, &:focus {
 
 						a {
 							color: #eeeeee;
@@ -328,6 +332,10 @@ HEADER STYLE
 
 						a {
 							color: $white;
+						}
+
+						&.active{
+							color: #c5c6c5;
 						}
 
 						&.active, &:hover, &:focus {
@@ -437,6 +445,10 @@ HEADER STYLE
 							font: 600 21px/25px $mont;
 							@include letter-spacing(50, 21px);
 							@include transition(all 0.3s);
+						}
+
+						&.active{
+							color: #c5c6c5;
 						}
 
 						&.active, &:hover, &:focus {

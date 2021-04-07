@@ -699,8 +699,8 @@ HEADER STYLE
 .header.transparent .navbar .navbar-collapse .navbar-nav > li a {
   color: #FFFFFF;
 }
-.header.transparent .navbar .navbar-collapse .navbar-nav > li.acitve a, .header.transparent .navbar .navbar-collapse .navbar-nav > li:hover a, .header.transparent .navbar .navbar-collapse .navbar-nav > li:focus a {
-  color: #c5c6c5;
+ .header.transparent .navbar .navbar-collapse .navbar-nav > li.active a, .header.transparent .navbar .navbar-collapse .navbar-nav > li:hover a, .header.transparent .navbar .navbar-collapse .navbar-nav > li:focus a { 
+  color: #c5c6c5; 
 }
 .header.stop .navbar {
   padding: 20px 0 16px;

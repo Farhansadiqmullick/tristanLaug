@@ -43,6 +43,16 @@ add_filter( 'upload_mimes', 'tristanlaug_custom_mime_types' );
 // 	acf_add_options_page();
 // }
 
+/** Options Page Header Background */
+function tristanlaug_dashboard_css() {
+	echo '<style type="text/css">
+		#acf-group_6064222376161 .hndle { flex-grow: initial; }
+		#acf-group_6064222376161 .hndle img { max-width: 100px; max-height:80px; margin-right: 15px; }
+		#acf-group_6064222376161 .hndle span { display: inline-flex; align-items: center; }
+	</style>';
+}
+add_action('admin_head', 'tristanlaug_dashboard_css');
+
 
 add_action('acf/init', 'tristanlaug_acf_sub_init');
 function tristanlaug_acf_sub_init() {
@@ -56,26 +66,6 @@ function tristanlaug_acf_sub_init() {
             'menu_title'  => __('Options'),
             'redirect'    => false,
         ));
-
-        // Add sub page.
-        // $child = acf_add_options_sub_page(array(
-        //     'page_title'  => __('Header'),
-        //     'menu_title'  => __('Header'),
-        //     'parent_slug' => $parent['menu_slug'],
-        // ));
-
-        //   // Add sub page.
-        //   $child = acf_add_options_sub_page(array(
-        //     'page_title'  => __('Footer'),
-        //     'menu_title'  => __('Footer'),
-        //     'parent_slug' => $parent['menu_slug'],
-        // ));
-        //  // Add sub page.
-        //  $child = acf_add_options_sub_page(array(
-        //     'page_title'  => __('404 Error'),
-        //     'menu_title'  => __('404 Error'),
-        //     'parent_slug' => $parent['menu_slug'],
-        // ));
     }
 }
 
@@ -84,5 +74,70 @@ function add_classes_on_a($ulclass)
 { return preg_replace('/<a /', '<a class="scroll-trigger"', $ulclass);}
 
 
+/*** Reorder dashboard menu */
+function aventus_reorder_admin_menu( $__return_true ) {
+	return array(
+		'index.php',                 	// Dashboard
+		'separator1',                	// --Space--
+        'acf-options-options',          //ACF Options
+		'edit.php',   					// Posts 
+        'edit.php?post_type=page',   	// Pages
+        'edit.php?post_type=film',      //Film
+        'edit.php?post_type=news',      //Film
+		'edit.php?post_type=uber-grid',	// Uber Grid 
+		'upload.php',                	// Media
+		'gf_edit_forms',             	// Gravity Forms
+		'themes.php',                	// Appearance
+		'plugins.php',               	// Plugins
+		'users.php',                 	// Users
+		'tools.php',                 	// Tools
+		'options-general.php',       	// Settings
+	);
+}
+add_filter( 'custom_menu_order', 'aventus_reorder_admin_menu' );
+add_filter( 'menu_order', 'aventus_reorder_admin_menu' );
+
+
+/*Custom Post type start*/
+function cw_post_type_films() {
+    $supports = array(
+    'title', // post title
+    'editor', // post content
+    'thumbnail', // featured images
+    'custom-fields', // custom fields
+    'revisions', // post revisions
+    'post-formats', // post formats
+    
+    );
+    $labels = array(
+    'name' => _x('Films', 'plural'),
+    'singular_name' => _x('Film', 'singular'),
+    'menu_name' => _x('Films', 'admin menu'),
+    'name_admin_bar' => _x('Films', 'admin bar'),
+    'add_new' => _x('Add New', 'add new'),
+    'add_new_item' => __('Add New Film'),
+    'new_item' => __('New Film'),
+    'edit_item' => __('Edit Film'),
+    'view_item' => __('View Film'),
+    'all_items' => __('All Films'),
+    'search_items' => __('Search Film'),
+    'not_found' => __('No Films found.'),
+    );
+    $args = array(
+    'supports' => $supports,
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => array('slug' => 'film'),
+    'has_archive' => true,
+    'hierarchical' => false,
+    'taxonomies' => array( 'category', 'post_tag' ),
+
+    );
+    register_post_type('film', $args);
+    }
+    add_action('init', 'cw_post_type_films');
 
 ?>
